@@ -1,0 +1,32 @@
+{
+  "name": "backend-task",
+  "version": "1.0.0",
+  "description": "hackerbay backend task",
+  "main": "server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DrKimpatrick/backend-task.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mongodb",
+    "docker",
+    "tdd",
+    "api",
+    "json",
+    "patching",
+    "image",
+    "thumbnail",
+    "generation"
+  ],
+  "author": "dr.kimpatrick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DrKimpatrick/backend-task/issues"
+  },
+  "homepage": "https://github.com/DrKimpatrick/backend-task#readme"
+}
