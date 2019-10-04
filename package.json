@@ -1,32 +1,56 @@
 {
-  "name": "backend-task",
-  "version": "1.0.0",
-  "description": "hackerbay backend task",
-  "main": "server.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DrKimpatrick/backend-task.git"
-  },
-  "keywords": [
-    "node",
-    "express",
-    "mongodb",
-    "docker",
-    "tdd",
-    "api",
-    "json",
-    "patching",
-    "image",
-    "thumbnail",
-    "generation"
-  ],
-  "author": "dr.kimpatrick",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DrKimpatrick/backend-task/issues"
-  },
-  "homepage": "https://github.com/DrKimpatrick/backend-task#readme"
+    "name": "backend-task",
+    "version": "1.0.0",
+    "description": "hackerbay backend task",
+    "main": "server.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon --watch './src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' ./src/lib/server.ts",
+        "build-ts": "tsc",
+        "watch-node": "nodemon ./src/dist/server.js",
+        "watch-ts": "tsc -w",
+        "serve": "node ./src/dist/server.js",
+        "lint": "node_modules/.bin/eslint --fix  src/lib/**/*.ts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DrKimpatrick/backend-task.git"
+    },
+    "keywords": [
+        "node",
+        "express",
+        "mongodb",
+        "docker",
+        "tdd",
+        "api",
+        "json",
+        "patching",
+        "image",
+        "thumbnail",
+        "generation"
+    ],
+    "author": "dr.kimpatrick",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/DrKimpatrick/backend-task/issues"
+    },
+    "homepage": "https://github.com/DrKimpatrick/backend-task#readme",
+    "dependencies": {
+        "@types/cors": "^2.8.6",
+        "@types/express": "^4.17.1",
+        "cors": "^2.8.5",
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "typescript": "^3.6.3",
+        "@typescript-eslint/eslint-plugin": "^1.9.0",
+        "@typescript-eslint/parser": "^1.9.0",
+        "babel-preset-env": "^1.7.0",
+        "eslint": "^5.16.0",
+        "eslint-config-prettier": "^4.2.0",
+        "eslint-plugin-prettier": "^3.1.0",
+        "husky": "^3.0.8",
+        "nodemon": "^1.19.3",
+        "prettier": "^1.17.0"
+    }
 }
