@@ -4,7 +4,7 @@
     "description": "hackerbay backend task",
     "main": "server.ts",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "mocha -r ts-node/register src/**/*.spec.ts",
         "dev": "nodemon --watch './src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' ./src/lib/server.ts",
         "build-ts": "tsc",
         "watch-node": "nodemon ./src/dist/server.js",
@@ -42,15 +42,20 @@
         "express": "^4.17.1"
     },
     "devDependencies": {
-        "typescript": "^3.6.3",
+        "@types/chai": "^4.2.3",
+        "@types/mocha": "^5.2.7",
         "@typescript-eslint/eslint-plugin": "^1.9.0",
         "@typescript-eslint/parser": "^1.9.0",
         "babel-preset-env": "^1.7.0",
+        "chai": "^4.2.0",
         "eslint": "^5.16.0",
         "eslint-config-prettier": "^4.2.0",
         "eslint-plugin-prettier": "^3.1.0",
         "husky": "^3.0.8",
+        "mocha": "^6.2.1",
         "nodemon": "^1.19.3",
-        "prettier": "^1.17.0"
+        "prettier": "^1.17.0",
+        "ts-node": "^8.4.1",
+        "typescript": "^3.6.3"
     }
 }
