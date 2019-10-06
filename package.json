@@ -42,12 +42,15 @@
         "@types/express": "^4.17.1",
         "@types/hapi__joi": "^15.0.4",
         "@types/jsonwebtoken": "^8.3.4",
+        "app-root-path": "^2.2.1",
         "chai-http": "^4.3.0",
         "cors": "^2.8.5",
         "express": "^4.17.1",
         "image-thumbnail": "^1.0.4",
         "jsonpatch": "^3.0.1",
-        "jsonwebtoken": "^8.5.1"
+        "jsonwebtoken": "^8.5.1",
+        "morgan": "^1.9.1",
+        "winston": "^3.2.1"
     },
     "devDependencies": {
         "@types/chai": "^4.2.3",
