@@ -2,7 +2,7 @@
 import express from 'express';
 import cors from 'cors';
 import JSONvalidator from './helpers/validateJSON';
-import AuthRoutes from './routes/auth';
+import AuthRoutes from './routes';
 
 class App {
     public app: express.Application = express();
