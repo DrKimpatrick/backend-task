@@ -2,6 +2,7 @@
 import express from 'express';
 import cors from 'cors';
 import JSONvalidator from './helpers/validateJSON';
+import AuthRoutes from './routes/auth';
 
 class App {
     public app: express.Application = express();
@@ -10,11 +11,16 @@ class App {
         this.app.use(cors());
         this.config();
         this.app.use(JSONvalidator.tryParseJSON);
+        this.configureRoutes();
     }
 
     private config(): void {
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
+    }
+
+    private configureRoutes(): void {
+        this.app.use('/api/v1', AuthRoutes);
     }
 }
 
