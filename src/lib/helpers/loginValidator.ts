@@ -20,7 +20,7 @@ class ValidateAuth extends Commons {
                 .label('Password is required'),
         });
 
-        const { error } = Joi.validate(req.body, schema, { abortEarly: false });
+        const { error } = schema.validate(req.body, { abortEarly: false });
 
         await this.raiseError(error, res, next);
     };

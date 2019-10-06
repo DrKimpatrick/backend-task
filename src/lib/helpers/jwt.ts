@@ -9,7 +9,7 @@ class JWT {
         @params { none }
         
     */
-    public tokenAdminUser = () => {
+    public token = () => {
         const token = jwt.sign({}, this.SECRETE_KEY, { expiresIn: '24h' });
         return token;
     };
