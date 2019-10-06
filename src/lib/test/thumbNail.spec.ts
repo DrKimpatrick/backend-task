@@ -7,15 +7,18 @@ import app from '../app';
 chai.use(chaiHttp);
 chai.should();
 
+const loginUrl = '/api/v1/login';
+const resizeUrl = '/api/v1/thumb/nail';
+
 describe('JSON Patch', () => {
     it('Should return the resulting thumbnail', done => {
         chai.request(app)
-            .post('/api/v1/login') // Login user
+            .post(loginUrl) // Login user
             .send({ username: 'kimpatrick', password: 'password' })
             .end((err, res) => {
                 if (err) done();
                 chai.request(app)
-                    .post('/api/v1/thumb/nail')
+                    .post(resizeUrl)
                     .set('x-access-token', res.body.token)
                     .send({
                         url: 'http://homepages.cae.wisc.edu/~ece533/images/arctichare.png',
@@ -33,12 +36,12 @@ describe('JSON Patch', () => {
 
     it('should return an error if URL is missing', done => {
         chai.request(app)
-            .post('/api/v1/login') // Login user
+            .post(loginUrl) // Login user
             .send({ username: 'kimpatrick', password: 'password' })
             .end((err, res) => {
                 if (err) done();
                 chai.request(app)
-                    .post('/api/v1/thumb/nail')
+                    .post(resizeUrl)
                     .set('x-access-token', res.body.token)
                     .send({})
                     .end((error, response) => {
@@ -52,12 +55,12 @@ describe('JSON Patch', () => {
 
     it('Should return 500 if image fails to be resized', done => {
         chai.request(app)
-            .post('/api/v1/login') // Login user
+            .post(loginUrl) // Login user
             .send({ username: 'kimpatrick', password: 'password' })
             .end((err, res) => {
                 if (err) done();
                 chai.request(app)
-                    .post('/api/v1/thumb/nail')
+                    .post(resizeUrl)
                     .set('x-access-token', res.body.token)
                     .send({
                         url: 'http://eeee',

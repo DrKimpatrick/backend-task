@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Response, Request, NextFunction } from 'express';
 class JsonValidator {
+    /*
+        Use Joi to validate request body for Json patch
+     */
     public tryParseJSON = (err: any, req: Request, res: Response, next: NextFunction): any => {
         if (err.status === 400) {
             return res.status(err.status).json({

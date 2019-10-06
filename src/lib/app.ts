@@ -13,12 +13,17 @@ class App {
         this.app.use(JSONvalidator.tryParseJSON);
         this.configureRoutes();
     }
-
+    /**
+        create application/json parser &&
+        create application/x-www-form-urlencoded parser
+     */
     private config(): void {
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
     }
-
+    /**
+        Add API routes
+     */
     private configureRoutes(): void {
         this.app.use('/api/v1', AuthRoutes);
     }

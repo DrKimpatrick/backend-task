@@ -15,7 +15,7 @@ class JWT {
     };
 
     /**
-        @params { req, res, next }
+        @params { req, res, next } from express
      */
     public verifyToken = (req: Request, res: Response, next: NextFunction) => {
         const token: any = req.headers['x-access-token'] || req.headers.authorization;
