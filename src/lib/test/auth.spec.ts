@@ -6,11 +6,12 @@ import app from '../app';
 // Configure chai
 chai.use(chaiHttp);
 chai.should();
+const loginUrl = '/api/v1/login';
 
 describe('User login', () => {
     it('should return token when user logins', done => {
         chai.request(app)
-            .post('/api/v1/login')
+            .post(loginUrl)
             .send({ username: 'kimpatrick', password: 'password' })
             .end((error, response) => {
                 if (error) done();
@@ -24,7 +25,7 @@ describe('User login', () => {
 
     it('should return an error if required fields are missing', done => {
         chai.request(app)
-            .post('/api/v1/login')
+            .post(loginUrl)
             .send({})
             .end((error, response) => {
                 if (error) done();

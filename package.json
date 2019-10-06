@@ -4,14 +4,14 @@
     "description": "hackerbay backend task",
     "main": "server.ts",
     "scripts": {
-        "test": "nyc mocha -r ts-node/register src/**/*.spec.ts -timeout 10000",
-        "dev": "nodemon --watch './src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' ./src/lib/server.ts",
+        "run-tests": "nyc mocha -r ts-node/register src/**/*.spec.ts -timeout 10000",
+        "start": "nodemon --watch './src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' ./src/lib/server.ts",
         "build-ts": "tsc",
         "watch-node": "nodemon ./src/dist/server.js",
         "watch-ts": "tsc -w",
         "serve": "node ./src/dist/server.js",
         "lint": "node_modules/.bin/eslint --fix  src/lib/**/*.ts",
-        "coverage": "npm run test &&  nyc report --reporter=text-lcov | coveralls"
+        "test": "npm run run-tests &&  nyc report --reporter=text-lcov | coveralls"
     },
     "repository": {
         "type": "git",

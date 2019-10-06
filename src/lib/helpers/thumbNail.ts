@@ -8,6 +8,9 @@ import Joi from '@hapi/joi';
 import Commons from './raiseError';
 
 class ValidateThumbNail extends Commons {
+    /*
+        Use Joi to validate request body for image resizing
+     */
     public validateUrl = async (req: Request, res: Response, next: NextFunction) => {
         const schema = Joi.object().keys({
             url: Joi.string()

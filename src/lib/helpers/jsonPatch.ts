@@ -8,6 +8,9 @@ import Joi from '@hapi/joi';
 import Commons from './raiseError';
 
 class ValidatePatch extends Commons {
+    /*
+        Use Joi to validate request body for Json patch
+     */
     public jsonPatch = async (req: Request, res: Response, next: NextFunction) => {
         const schema = Joi.object().keys({
             jsonObject: Joi.object()
