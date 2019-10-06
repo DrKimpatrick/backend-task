@@ -1,0 +1,15 @@
+{
+    "source": {
+        "include": ["./src"],
+        "includePattern": ".ts$",
+        "excludePattern": "(node_modules/|docs)"
+    },
+    "plugins": ["plugins/markdown"],
+    "opts": {
+        "encoding": "utf8",
+        "readme": "./README.md",
+        "destination": "docs/",
+        "recurse": true,
+        "verbose": true
+    }
+}

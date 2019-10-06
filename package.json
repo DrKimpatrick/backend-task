@@ -11,7 +11,8 @@
         "watch-ts": "tsc -w",
         "serve": "node ./src/dist/server.js",
         "lint": "node_modules/.bin/eslint --fix  src/lib/**/*.ts",
-        "test": "npm run run-tests &&  nyc report --reporter=text-lcov | coveralls"
+        "test": "npm run run-tests &&  nyc report --reporter=text-lcov | coveralls",
+        "docs": "./node_modules/.bin/typedoc --out docs --mode modules"
     },
     "repository": {
         "type": "git",
@@ -47,6 +48,7 @@
         "cors": "^2.8.5",
         "express": "^4.17.1",
         "image-thumbnail": "^1.0.4",
+        "jsdoc": "^3.6.3",
         "jsonpatch": "^3.0.1",
         "jsonwebtoken": "^8.5.1",
         "morgan": "^1.9.1",
@@ -71,6 +73,7 @@
         "prettier": "^1.17.0",
         "source-map-support": "^0.5.13",
         "ts-node": "^8.4.1",
+        "typedoc": "^0.15.0",
         "typescript": "^3.6.3"
     },
     "nyc": {
