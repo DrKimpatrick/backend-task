@@ -13,9 +13,11 @@ class ValidatePatch extends Commons {
             jsonObject: Joi.object()
                 .required()
                 .label('jsonObject should be an object and is required'),
-            patchObject: Joi.object()
+            patchObject: Joi.array()
+                .items(Joi.object().label('PatchObject is invalid'))
+                .min(1)
                 .required()
-                .label('patchObject should be an object and is required'),
+                .label('patchObject should be an array of objects and atleast one is required'),
         });
 
         const { error } = schema.validate(req.body, { abortEarly: false });
