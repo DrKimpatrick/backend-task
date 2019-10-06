@@ -4,7 +4,7 @@
     "description": "hackerbay backend task",
     "main": "server.ts",
     "scripts": {
-        "test": "nyc mocha -r ts-node/register src/**/*.spec.ts",
+        "test": "nyc mocha -r ts-node/register src/**/*.spec.ts -timeout 10000",
         "dev": "nodemon --watch './src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' ./src/lib/server.ts",
         "build-ts": "tsc",
         "watch-node": "nodemon ./src/dist/server.js",
@@ -45,6 +45,7 @@
         "chai-http": "^4.3.0",
         "cors": "^2.8.5",
         "express": "^4.17.1",
+        "image-thumbnail": "^1.0.4",
         "jsonpatch": "^3.0.1",
         "jsonwebtoken": "^8.5.1"
     },
@@ -72,6 +73,10 @@
     "nyc": {
         "include": [
             "src/**/*.ts"
+        ],
+        "exclude": [
+            "src/lib/helpers/validateJSON.ts",
+            "src/**/*.spec.ts"
         ],
         "extension": [
             ".ts"
